@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stock Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Check Profit/Loss on your stock</h2>
+        <div class="main-container">
+            <form class="stockForm">
+                <label for="purchasePrice">
+                    <input type="number" placeholder="Enter purchase price" name="purchasePrice" id="purchasePrice">
+                </label>
+                <label for="quantity">
+                    <input type="number" placeholder="Enter quantity" name="quantity" id="quantity"></label>
+                <label for="currentPrice">
+                    <input type="number" placeholder="Enter current price" name="currentPrice" id="currentPrice">
+                </label>
+                <button type="submit">Check</button>
+            </form>
+            <img src="./images/banner.jpg" alt="stock_banner_img">
+        </div>
+        <div class="result">
+            <h3>Results will be shown here</h3>
+        </div>
+        <script src="app.js"></script>
+</body>
+
+</html>
