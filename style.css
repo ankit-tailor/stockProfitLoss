@@ -16,6 +16,16 @@ body {
     display: flex;
 }
 
+.sadTheme {
+    background: url("./images/sad.gif");
+    color: white;
+}
+
+.happyTheme {
+    background: url("./images/happy.gif");
+    color: white;
+}
+
 img {
     width: 30%;
     height: 50%;
