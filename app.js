@@ -16,24 +16,28 @@ form.addEventListener('submit', function (e) {
     const quantityValue = Number(quantity.value);
     const currentPriceValue = Number(currentPrice.value);
 
-    if (purchasePriceValue > currentPriceValue) {
-        const loss = ((purchasePriceValue - currentPriceValue) * quantityValue);
-        const lossPrecentage = (loss * 100) / purchasePriceValue
+    if (purchasePriceValue > 0 && quantityValue > 0 && currentPriceValue > 0) {
+        if (purchasePriceValue > currentPriceValue) {
+            const loss = ((purchasePriceValue - currentPriceValue) * quantityValue);
+            const lossPrecentage = (loss * 100) / purchasePriceValue
 
-        if (lossPrecentage > 50) {
-            container.classList.add('sadTheme')
+            if (lossPrecentage > 50) {
+                container.classList.add('sadTheme')
+            }
+
+            showResult(`You lost ${lossPrecentage}. Your total loss is ${loss}.`);
+        } else {
+            const profit = ((currentPriceValue - purchasePriceValue) * quantityValue);
+            const profitPercentage = (profit * 100) / purchasePriceValue;
+
+            if (profitPercentage > 50) {
+                container.classList.add('happyTheme')
+            }
+
+            showResult(`You gained ${profitPercentage}. Your total profit is ${profit}.`);
         }
-
-        showResult(`You lost ${lossPrecentage}. Your total loss is ${loss}.`);
     } else {
-        const profit = ((currentPriceValue - purchasePriceValue) * quantityValue);
-        const profitPercentage = (profit * 100) / purchasePriceValue;
-
-        if (profitPercentage > 50) {
-            container.classList.add('happyTheme')
-        }
-
-        showResult(`You gained ${profitPercentage}. Your total profit is ${profit}.`);
+        showResult(`Please enter valid values.`)
     }
 
 })
