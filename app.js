@@ -8,6 +8,10 @@ const result = document.querySelector('.result')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    container.classList.remove('happyTheme')
+    container.classList.remove('sadTheme')
+
     const purchasePriceValue = Number(purchasePrice.value);
     const quantityValue = Number(quantity.value);
     const currentPriceValue = Number(currentPrice.value);
@@ -17,7 +21,7 @@ form.addEventListener('submit', function (e) {
         const lossPrecentage = (loss * 100) / purchasePriceValue
 
         if (lossPrecentage > 50) {
-
+            container.classList.add('sadTheme')
         }
 
         showResult(`You lost ${lossPrecentage}. Your total loss is ${loss}.`);
@@ -26,6 +30,7 @@ form.addEventListener('submit', function (e) {
         const profitPercentage = (profit * 100) / purchasePriceValue;
 
         if (profitPercentage > 50) {
+            container.classList.add('happyTheme')
         }
 
         showResult(`You gained ${profitPercentage}. Your total profit is ${profit}.`);
