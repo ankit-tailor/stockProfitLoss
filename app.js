@@ -25,7 +25,7 @@ form.addEventListener('submit', function (e) {
                 container.classList.add('sadTheme')
             }
 
-            showResult(`You lost ${lossPrecentage}. Your total loss is ${loss}.`);
+            showResult(`You lost ${lossPrecentage}%. Your total loss is ${loss}.`);
         } else {
             const profit = ((currentPriceValue - purchasePriceValue) * quantityValue);
             const profitPercentage = (profit * 100) / purchasePriceValue;
@@ -34,7 +34,7 @@ form.addEventListener('submit', function (e) {
                 container.classList.add('happyTheme')
             }
 
-            showResult(`You gained ${profitPercentage}. Your total profit is ${profit}.`);
+            showResult(`You gained ${profitPercentage}%. Your total profit is ${profit}.`);
         }
     } else {
         showResult(`Please enter valid values.`)
